@@ -110,4 +110,4 @@ app.get("/class", function (req, res) {
 //       console.log(err);
 //     });
 // });
-app.listen(10000);
+app.listen(process.env.PORT || 10000);
