@@ -1,6 +1,5 @@
-const mongoose = require("mongoose");
+const mongoose = require("./mongoCN");
 const mongo = require("./mongo");
-mongoose.connect("mongodb://localhost/k15");
 
 const ClassSchema = mongoose.Schema(
   {

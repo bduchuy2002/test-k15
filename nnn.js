@@ -1,7 +1,6 @@
 const path = require("path");
 
-const mongoose = require("mongoose");
-mongoose.connect("mongodb://localhost/k15");
+const mongoose = require("./mongoCN");
 
 const express = require("express");
 var cookieParser = require("cookie-parser");

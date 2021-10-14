@@ -1,6 +1,5 @@
-const mongoose = require("mongoose");
+const mongoose = require("./mongoCN");
 const router5 = require("./router5");
-mongoose.connect("mongodb://localhost/k15");
 
 const jobSchema = mongoose.Schema(
   {

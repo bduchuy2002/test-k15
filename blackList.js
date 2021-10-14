@@ -1,6 +1,5 @@
-const mongoose = require("mongoose");
+const mongoose = require("./mongoCN");
 
-mongoose.connect("mongodb://localhost/k15");
 const BlackListScheme = mongoose.Schema(
   {
     token: String,

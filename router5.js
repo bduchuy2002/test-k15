@@ -17,12 +17,12 @@ const express = require("express");
 const jwt = require("jsonwebtoken");
 const bcrypt = require("bcrypt");
 const router5 = express.Router();
-const mongoose = require("mongoose");
+const mongoose = require("./mongoCN");
 const { checkLogin } = require("./check");
 const { checkRole1 } = require("./checkRole1");
 
 const checkRole = require("./checkRole");
-mongoose.connect("mongodb://localhost/k15");
+
 const Usermode1 = require("./mongo4");
 const BlackListModel = require("./blackList");
 const UserJobmodel = require("./mongoUserJob");
