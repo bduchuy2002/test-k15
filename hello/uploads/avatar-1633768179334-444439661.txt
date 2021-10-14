@@ -1,0 +1,30 @@
+npm init : khởi tạo
+tải express : npm i express
+
+require
+
+khởi tạo app
+
+cho nó 1 cái cổng để nhận request , gửi response
+app.get('đường dẫn',function(req,res){
+    res.download("./noidung.txt");
+    res.sent('sdsd'): gửi thông điệp đi
+    res.json({})
+    res.sendFile(homeLink);
+})
+request : yêu cầu từ client--> sever
+
+query   : path?key=value&&key2=value2/ gửi data trên đường dẫn về server
+req.query  : bắt query gửi về
+query có hay không thì vẫn request vào path
+
+params:  Gửi data trên đường dẫn được quy định về server
+req.params: bắt params gửi về 
+             đã quy định dùng params thì buộc phải dùng
+path/:key 
+
+express.static 
+router:  Phân luồng hoạt động
+         thông thương phân luồng theo database
+router = express.Router()
+app.use(path,router)         

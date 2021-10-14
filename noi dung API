@@ -1,0 +1,100 @@
+get : hiển thị giao diện 
+      gửi data
+ post:  thêm data
+
+ put:  update data
+
+
+ delete:   xóa data  
+
+ restful API   
+
+ path: Tường minh tên bảng trên đường dẫn
+       nếu tương tác với 1 data cụ thể thì phải thường minh id
+
+put/  user/:id: update 1 user cụ thế
+ 
+get / user/:id : ấy data 1 user cụ thể
+
+delete / class/:id : xóa 1 class cụ thể
+
+async - await : xử lí promise , biến promise chạy đồng bộ bên trong function async
+router5.get("/c", async function (req, res) {
+  try {
+    const classList = await classModal.find();
+    res.json(classList);
+  } catch (error) {
+    console.log(error);
+    res.json(error);
+  }
+});
+ajax : gửi request từ client về server và trả về 1 promise 
+       promise sẽ nhận phản hồi từ server
+       ajax vừa gửi request vừa nhận response
+
+gửi data về server 
+
+query,params,headers     request nào cũng có thể gửi được
+body : POST,PUT , DELETE gửi được 
+express.urlendcoded({extended:true)
+express.json()
+
+cookies: sẽ được gửi kèm lên server
+cookie-parser: tự động chuyển đổi cookies thành object
+
+middleware : những bước ở giữa cần thực hiện trước ghi lm chức năng chính
+function setCookie(cname, cvalue, exdays) {
+  const d = new Date();
+  d.setTime(d.getTime() + exdays * 24 * 60 * 60 * 1000);
+  let expires = "expires=" + d.toUTCString();
+  document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
+}
+function getCookie(cname) {
+  let name = cname + "=";
+  let decodedCookie = decodeURIComponent(document.cookie);
+  let ca = decodedCookie.split(";");
+  for (let i = 0; i < ca.length; i++) {
+    let c = ca[i];
+    while (c.charAt(0) == " ") {
+      c = c.substring(1);
+    }
+    if (c.indexOf(name) == 0) {
+      return c.substring(name.length, c.length);
+    }
+  }
+  return "";
+}
+function delete_cookie(name) {
+  document.cookie = name + "=; Path=/; Expires=Thu, 01 Jan 1970 00:00:01 GMT;";
+}
+const jwt = require("jsonwebtoken");
+let token = jwt.sign({ id: "10032002" }, "huy", { expiresIn: 60 });
+let string =
+  "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjEwMDMyMDAyIiwiaWF0IjoxNjMzNTMxODQ4LCJleHAiOjE2MzM1MzE5MDh9.130LNfmAdndNPwUHw7aYxgmmkPSGmUOFxK3UipfpczE";
+let data = jwt.verify(string, "huy");
+console.log(data);
+console.log(token);
+
+=======================================
+xác thực user
+cookie ==> id ==> user ==> next
+
+phân quyền 
+cookie ==> id ==> user =>> role  =>> next
+
+multer:    upload file
+           form phai co entype='multipart/formdata'
+
+            input type='file'  phai co name === multerupload
+            $.ajax phai co them setting:
+            processData: false,
+            contentType: false,
+
+
+=====
+ejs 
+app.set('view engine','ejs')
+res.render('') tự động tìm kiếm trong file views
+<%- %> bien dich HTML
+<%= %> : lay bien ko bien dich
+<% %>  : dung logic, cu phap js

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="publics/css.css">
+</head>
+<body>
+    
+
+    <div>
+        <button onclick="logout()">logout</button>
+       <!-- <select name="danhsachjob" id="listDo" class="listDo" onchange="changeId()">
+           <option value="">danh sach job</option>
+
+        </select> -->
+    </div>
+     
+    <div class="addList">
+        <input type="text" name="" id="title" placeholder="title"><br>
+        <textarea name="" id="description" cols="10" rows="10" placeholder="description" style="margin: 0px; width: 165px; height: 25px;"></textarea>
+        <br>
+        <select name="" id="status">
+            <option value="todo">todo</option>
+            <option value="doing">doing</option>
+            <option value="done">done</option>
+        </select>
+        <br>
+        
+        <input type="date" name="" id="deadline"><br>
+        <input type="text" name="" id="userid" placeholder="userid"><br>
+        <button onclick="create()">creat</button>
+    </div>
+
+
+
+
+    <div class="list">
+        <div class="todo">
+            <h2>Todo</h2>
+            <div class="todo-list"></div>
+        </div>
+        <div class="doing">
+              <h2>Doing</h2>
+              <div class="doing-list"></div>
+        </div>
+        <div class="done">
+              <h2>Done</h2> 
+              <div class="done-list"></div>
+        </div>
+    </div>
+
+</body>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script src="/publics/listDo.js"></script>
+</html>

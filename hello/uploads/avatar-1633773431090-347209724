@@ -1,0 +1,33 @@
+model.create({},{},{})  them data vao bảng, trả về promise,tao nhieu tra ve array, tao 1 tra ve obj
+model.find({dk tìm kiếm }}): tìm toàn bộ data thỏa mãn đk, luôn trả về array
+mode.findOne({dk})   trả về data đầu tiên thỏa mãn đk,kiểu obj,ko thì về null
+model.updataOne({dk},{update}): updata data dau tien thoa man dk
+model.updataMany({dk},{update}): update tat ca data
+                                 chỉ update khi mới khác cũ
+
+model.deteleOne({dk})   xóa data đầu tiên thỏa mãn,trả về obj báo cáo
+model.deteleMany({dk})   xóa tất cả data thỏa mãn đk,trả về obj báo cáo
+$gt  >
+$gte  >=
+%lt   <
+%$lte  <=
+$ne    #
+
+find({$gte:{key:20}})
+
+$nin : ngược lại với $in tìm kiếm loại bỏ giá trị
+
+
+$in{1,2} tìm kiếm nếu nhận 1 trong các giá trị cụ thể
+$or : tìm kiếm nếu thỏa mãn 1 trong các nội dung
+$not : tìm kiếm và loại bỏ những data nằm trong object
+$nor: tìm kiếm và loại bỏ những dât thỏa mãn dk trong array
+sort : sắp xếp data đầu ra 1 là tăng, -1 là giảm
+
+limit : giới hạn số lượng data đầu ra 
+.skip  : số lượng bỏ qua khi trả data về 
+$push:  thêm vào trường array
+$pull:  xóa value
+array : value  trả về data chứa value trong array
+array:[1,2,3]  trả về data chứa array y hệt về giá trị và vị trí
+araay : {%all:[1,2,3]}  trả về data chứa các giá trị trong array
